@@ -1,3 +1,5 @@
+import customtkinter
+
 class Profile:
     def __init__(self, name):
         self.name = name
@@ -14,7 +16,6 @@ class Profile:
         
     def list_todos(self):
         ...
-        raise Unknowntodoerror("No To-Dos found")
     
 class Todos:
     def __init__(self, name):
@@ -25,6 +26,21 @@ class Unknowntodoerror(Exception):
     def __init__(self, message):
         self.message = message
         super().__init__(self.message)
+        
+        
+class App(customtkinter.CTk):
+    def __init__(self):
+        super().__init__()
+        
+        self.title("To-Do List")
+        self.geometry("600x900")
+        self.grid_columnconfigure((0, 1), weight=1)
+        
+        def button_callback():
+            print("button pressed")
 
 if __name__ == "__main__":
     Profile("Fuckasaurus").list_todos()
+    
+    app = App()
+    app.mainloop()
