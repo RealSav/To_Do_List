@@ -34,10 +34,6 @@ class App(customtkinter.CTk):
         
         self.title("To-Do List")
         self.geometry("600x900")
-        self.grid_columnconfigure((0, 1), weight=1)
-        
-        def button_callback():
-            print("button pressed")
 
 if __name__ == "__main__":
     Profile("Fuckasaurus").list_todos()
