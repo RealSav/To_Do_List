@@ -1,5 +1,10 @@
 import customtkinter
 
+customtkinter.set_appearance_mode("system")
+customtkinter.set_default_color_theme("dark-blue")
+
+
+
 class Profile:
     def __init__(self, name):
         self.name = name
@@ -34,6 +39,14 @@ class App(customtkinter.CTk):
         
         self.title("To-Do List")
         self.geometry("600x900")
+        
+        optionmenu = customtkinter.CTkOptionMenu(self, values=["Profile 1", "Profile 2", "Profile 3", "Profile 4"])
+        optionmenu.pack(pady=10, padx=10)
+        
+    
+    def optionmenu_callback(self):
+        print("Optionmenu dropdown clicked:", self.choice)
+        
 
 if __name__ == "__main__":
     Profile("Fuckasaurus").list_todos()
