@@ -27,8 +27,13 @@ class Profile:
                 print(f"To-Do list: {name} has been deleted.")
         print(f"To-Do list {name} was not found, please try again.")
 
-    def list_profiles(self):
-        ...
+    def list_profiles(cls):
+        if cls.profiles:
+            print("Profiles: ")
+            for profile in cls.profiles:
+                print(f"{profile.name}")
+        else:
+            print("No profiles found.")
         
     def list_todos(self):
         ...
@@ -62,7 +67,10 @@ class Todos:
         
 
 if __name__ == "__main__":
-    Profile("Fuckasaurus").list_todos()
+    Profile.create_profile("Home")
+    Profile.create_profile("Office")
+    Profile.create_profile("Study")
+    Profile.create_profile("Fun")
     
     # app = App()
     # app.mainloop()
